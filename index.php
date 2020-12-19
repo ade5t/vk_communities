@@ -33,7 +33,7 @@ session_write_close();
 
 <body>
     <nav class="navbar navbar-default" style="background-color: lightgray">
-        <a class="navbar-brand" style="color: lightslategrey" href="/vk/">Управление сообществами</a>
+        <a class="navbar-brand" style="color: lightslategrey" href="https://vk-app0.herokuapp.com/">Управление сообществами</a>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
