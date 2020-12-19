@@ -69,8 +69,6 @@ if (isset($_POST['communities'])){
             $result = curl_exec($kur);
             curl_close($kur);
             $wall = json_decode($result, true);
-            echo $wall;
-            exit();
 
             if (!$wall["response"]["error"]) {
                 $communities["response"]["items"][$i]["date"] = $wall["response"]["items"][0]["is_pinned"] ? gmdate("Y-m-d", $wall["response"]["items"][1]["date"]) : gmdate("Y-m-d", $wall["response"]["items"][0]["date"]);
