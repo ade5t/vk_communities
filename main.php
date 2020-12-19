@@ -47,8 +47,6 @@ if (isset($_POST['communities'])){
     $result = curl_exec($kur);
     curl_close($kur);
     $communities = json_decode($result, true);
-    echo 'lol2';
-    exit();
 
 //    Получаем для каждого сообщества дату последнего поста
     if (!$communities["response"]["error"]) {
@@ -61,8 +59,6 @@ if (isset($_POST['communities'])){
                 'v' => '5.84',
                 'access_token' => $tmp_access_token
             );
-            echo 'lol3';
-            exit();
 
             $uri = 'https://api.vk.com/method/wall.get?' . http_build_query($request_params);
             $kur = curl_init();
@@ -73,7 +69,7 @@ if (isset($_POST['communities'])){
             $result = curl_exec($kur);
             curl_close($kur);
             $wall = json_decode($result, true);
-            echo 'lol4';
+            echo $wall;
             exit();
 
             if (!$wall["response"]["error"]) {
