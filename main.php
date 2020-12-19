@@ -37,6 +37,7 @@ if (isset($_POST['communities'])){
         'access_token' => $tmp_access_token
     );
     echo 'lol';
+    exit();
 
 //    Получаем список сообществ
     $uri = 'https://api.vk.com/method/groups.get?'.http_build_query($request_params);
@@ -49,6 +50,7 @@ if (isset($_POST['communities'])){
     curl_close($kur);
     $communities = json_decode($result, true);
     echo 'lol2';
+    exit();
 
 //    Получаем для каждого сообщества дату последнего поста
     if (!$communities["response"]["error"]) {
@@ -62,6 +64,7 @@ if (isset($_POST['communities'])){
                 'access_token' => $tmp_access_token
             );
             echo 'lol3';
+            exit();
 
             $uri = 'https://api.vk.com/method/wall.get?' . http_build_query($request_params);
             $kur = curl_init();
@@ -73,6 +76,7 @@ if (isset($_POST['communities'])){
             curl_close($kur);
             $wall = json_decode($result, true);
             echo 'lol4';
+            exit();
 
             if (!$wall["response"]["error"]) {
                 $communities["response"]["items"][$i]["date"] = $wall["response"]["items"][0]["is_pinned"] ? gmdate("Y-m-d", $wall["response"]["items"][1]["date"]) : gmdate("Y-m-d", $wall["response"]["items"][0]["date"]);
@@ -80,6 +84,7 @@ if (isset($_POST['communities'])){
             else  $communities["response"]["items"][$i]["date"] = 0;
         }
 echo 'lol5';
+exit();
         session_start();
         $_SESSION['communities'] = $communities;
         session_write_close();
