@@ -75,8 +75,6 @@ if (isset($_POST['communities'])){
             }
             else  $communities["response"]["items"][$i]["date"] = 0;
         }
-echo 'lol5';
-exit();
         session_start();
         $_SESSION['communities'] = $communities;
         session_write_close();
