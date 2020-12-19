@@ -36,8 +36,6 @@ if (isset($_POST['communities'])){
         'v' => '5.61',
         'access_token' => $tmp_access_token
     );
-    echo 'lol';
-    exit();
 
 //    Получаем список сообществ
     $uri = 'https://api.vk.com/method/groups.get?'.http_build_query($request_params);
