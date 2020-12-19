@@ -51,7 +51,7 @@ if (isset($_POST['communities'])){
 //    Получаем для каждого сообщества дату последнего поста
     if (!$communities["response"]["error"]) {
         for ($i = 0; $i < $communities["response"]["count"]; $i++) {
-            sleep(1);
+            usleep(300000);
             $request_params = array(
                 'owner_id' => '-' . $communities["response"]["items"][$i]["id"],
                 'domain' => $communities["response"]["items"][$i]["screen_name"],
